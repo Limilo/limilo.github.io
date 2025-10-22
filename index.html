@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Limilo Ltd - Professional business solutions">
-    <title>Limilo Ltd</title>
+    <meta name="description" content="Limilo Ltd - Cloud infrastructure, DevOps, and AI-powered automation specialists">
+    <title>Limilo Ltd - Cloud Infrastructure & AI Automation Experts</title>
     <style>
         * {
             margin: 0;
@@ -18,20 +18,17 @@
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
         .container {
             background: white;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 900px;
+            max-width: 1000px;
             width: 100%;
+            margin: 0 auto;
             padding: 60px 40px;
-            text-align: center;
             animation: fadeIn 0.8s ease-in;
         }
 
@@ -60,6 +57,7 @@
             color: #667eea;
             margin-bottom: 20px;
             font-weight: 700;
+            text-align: center;
         }
 
         .tagline {
@@ -67,6 +65,22 @@
             color: #666;
             margin-bottom: 40px;
             font-weight: 300;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #667eea;
+            margin: 50px 0 25px 0;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.3em;
+            color: #764ba2;
+            margin: 20px 0 10px 0;
+            font-weight: 600;
         }
 
         .description {
@@ -74,9 +88,144 @@
             color: #555;
             line-height: 1.8;
             margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            text-align: left;
+        }
+
+        .description p {
+            margin-bottom: 15px;
+        }
+
+        .section {
+            margin: 40px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .tech-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.95em;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tech-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .why-limilo {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 35px;
+            margin: 40px 0;
+        }
+
+        .why-limilo ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .why-limilo li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            font-size: 1.05em;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .why-limilo li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 50px 0 40px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.15em;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1em;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
 
         .contact-section {
@@ -84,11 +233,13 @@
             border-radius: 10px;
             padding: 30px;
             margin-top: 40px;
+            text-align: center;
         }
 
         .contact-section h2 {
             color: #667eea;
             margin-bottom: 20px;
+            margin-top: 0;
             font-size: 1.8em;
         }
 
@@ -102,6 +253,7 @@
             color: #667eea;
             text-decoration: none;
             transition: color 0.3s ease;
+            font-weight: 600;
         }
 
         .contact-info a:hover {
@@ -115,6 +267,7 @@
             border-top: 1px solid #eee;
             color: #999;
             font-size: 0.9em;
+            text-align: center;
         }
 
         @media (max-width: 768px) {
@@ -126,12 +279,24 @@
                 font-size: 2em;
             }
 
+            h2 {
+                font-size: 1.5em;
+            }
+
             .tagline {
                 font-size: 1.2em;
             }
 
             .logo {
                 max-width: 200px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section {
+                padding: 30px 20px;
             }
         }
     </style>
@@ -142,17 +307,75 @@
 
         <h1>Limilo Ltd</h1>
 
-        <p class="tagline">Building Tomorrow's Solutions Today</p>
+        <p class="tagline">Where Infrastructure Meets Intelligence</p>
 
-        <div class="description">
-            <p>Welcome to Limilo Ltd. We are a forward-thinking company dedicated to delivering exceptional business solutions and services. Our commitment to excellence and innovation drives everything we do.</p>
+        <div class="section description">
+            <p>Limilo Ltd partners with businesses to build and maintain the critical systems that power their operations. We specialize in cloud infrastructure, DevOps, and production systems engineering, with particular expertise in AWS and Linux environments.</p>
+
+            <p>Our approach combines deep technical knowledge with a relentless focus on reliability. Whether you're scaling cloud infrastructure, troubleshooting complex production issues, or exploring AI-driven automation, we deliver solutions that work when it matters most.</p>
+
+            <p>We're passionate about emerging technologies and actively working with agentic AI systems and intelligent automation—helping forward-thinking organizations leverage cutting-edge capabilities to gain competitive advantage.</p>
+        </div>
+
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">☁️</div>
+                <h3>Cloud Infrastructure</h3>
+                <p>AWS architecture, deployment, and optimization. Build scalable, resilient cloud systems that grow with your business.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚙️</div>
+                <h3>DevOps & Automation</h3>
+                <p>CI/CD pipelines, infrastructure as code, and process automation to accelerate delivery and reduce errors.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Production Support</h3>
+                <p>Expert troubleshooting and maintenance for mission-critical systems. When downtime isn't an option, we deliver.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🤖</div>
+                <h3>AI & Automation</h3>
+                <p>Agentic AI systems and intelligent automation to transform operations and unlock new capabilities.</p>
+            </div>
+        </div>
+
+        <h2>Technology Expertise</h2>
+        <div class="tech-stack">
+            <div class="tech-badge">AWS</div>
+            <div class="tech-badge">Linux</div>
+            <div class="tech-badge">Python</div>
+            <div class="tech-badge">Docker</div>
+            <div class="tech-badge">Kubernetes</div>
+            <div class="tech-badge">Terraform</div>
+            <div class="tech-badge">CI/CD</div>
+            <div class="tech-badge">AI/ML</div>
+            <div class="tech-badge">DevOps</div>
+        </div>
+
+        <div class="why-limilo">
+            <h2>Why Limilo</h2>
+            <ul>
+                <li><strong>Battle-Tested Expertise:</strong> Years of experience running production systems where reliability is paramount</li>
+                <li><strong>Cloud-Native Focus:</strong> Deep AWS and Linux knowledge with proven results in complex environments</li>
+                <li><strong>Forward-Thinking:</strong> Not just maintaining systems—pioneering AI-driven automation and intelligent infrastructure</li>
+                <li><strong>Scalable Solutions:</strong> From startups to enterprise, we architect systems that scale with your growth</li>
+                <li><strong>Results-Driven:</strong> We measure success by uptime, performance, and business impact</li>
+            </ul>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Build Something Great?</h2>
+            <p>Whether you need to optimize your cloud infrastructure, solve complex technical challenges, or explore how AI can transform your operations, let's talk.</p>
+            <a href="mailto:info@limilo.com" class="cta-button">Schedule a Consultation</a>
         </div>
 
         <div class="contact-section">
             <h2>Get in Touch</h2>
             <div class="contact-info">
                 <p>Email: <a href="mailto:info@limilo.com">info@limilo.com</a></p>
-                <p>Web: <a href="http://www.limilo.com">www.limilo.com</a></p>
+                <p>Web: <a href="https://www.limilo.com">www.limilo.com</a></p>
             </div>
         </div>
 
