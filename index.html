@@ -17,243 +17,298 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
+            color: #2d3748;
+            background: #ffffff;
         }
 
-        .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 1000px;
-            width: 100%;
+        /* Navigation */
+        nav {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 40px;
-            animation: fadeIn 0.8s ease-in;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #2d3748;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #5a67d8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .logo {
-            max-width: 450px;
+            max-width: 400px;
             height: auto;
-            margin: 0 auto 40px;
+            margin: 0 auto 3rem;
             display: block;
-        }
-
-        h1 {
-            font-size: 3em;
-            color: #667eea;
-            margin-bottom: 20px;
-            font-weight: 700;
-            text-align: center;
+            filter: brightness(0) invert(1);
         }
 
         .tagline {
-            font-size: 1.5em;
-            color: #666;
-            margin-bottom: 40px;
-            font-weight: 300;
-            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-alt {
+            background: #f7fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         h2 {
-            font-size: 2em;
-            color: #667eea;
-            margin: 50px 0 25px 0;
-            font-weight: 600;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
             text-align: center;
         }
 
-        h3 {
-            font-size: 1.3em;
-            color: #764ba2;
-            margin: 20px 0 10px 0;
-            font-weight: 600;
+        .section-intro {
+            text-align: center;
+            font-size: 1.125rem;
+            color: #4a5568;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.7;
         }
 
-        .description {
-            font-size: 1.1em;
-            color: #555;
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.125rem;
+            color: #4a5568;
             line-height: 1.8;
-            margin-bottom: 40px;
-            text-align: left;
         }
 
-        .description p {
-            margin-bottom: 15px;
+        .about-content p {
+            margin-bottom: 1.5rem;
         }
 
-        .section {
-            margin: 40px 0;
-        }
-
+        /* Services Grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            margin-top: 30px;
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
         .service-card {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 25px;
-            text-align: left;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: #5a67d8;
         }
 
         .service-icon {
-            font-size: 2.5em;
-            margin-bottom: 15px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
         }
 
         .service-card h3 {
-            color: #667eea;
-            font-size: 1.2em;
-            margin-bottom: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
         }
 
         .service-card p {
-            color: #666;
-            font-size: 0.95em;
-            line-height: 1.6;
+            color: #4a5568;
+            line-height: 1.7;
+            font-size: 1rem;
         }
 
+        /* Technology Stack */
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 1rem;
             justify-content: center;
-            margin: 30px 0;
+            margin-top: 3rem;
         }
 
         .tech-badge {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            color: #2d3748;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
             font-weight: 600;
-            font-size: 0.95em;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
         }
 
         .tech-badge:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            border-color: #5a67d8;
+            background: #5a67d8;
+            color: white;
+            transform: translateY(-2px);
         }
 
-        .why-limilo {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 35px;
-            margin: 40px 0;
+        /* Why Limilo */
+        .why-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .why-limilo ul {
-            list-style: none;
-            margin-top: 20px;
+        .why-item {
+            background: white;
+            padding: 1.5rem;
+            border-left: 4px solid #5a67d8;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
-        .why-limilo li {
-            padding: 12px 0 12px 35px;
-            position: relative;
-            font-size: 1.05em;
-            color: #555;
+        .why-item strong {
+            color: #2d3748;
+            font-size: 1.125rem;
+        }
+
+        .why-item-content {
+            color: #4a5568;
+            margin-top: 0.5rem;
             line-height: 1.7;
         }
 
-        .why-limilo li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: bold;
-            font-size: 1.3em;
-        }
-
+        /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 15px;
-            padding: 40px;
-            margin: 50px 0 40px 0;
-            text-align: center;
             color: white;
+            text-align: center;
+            padding: 5rem 2rem;
         }
 
         .cta-section h2 {
             color: white;
-            margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
         }
 
         .cta-section p {
-            font-size: 1.15em;
-            margin-bottom: 25px;
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 2rem;
             line-height: 1.7;
         }
 
         .cta-button {
             display: inline-block;
             background: white;
-            color: #667eea;
-            padding: 15px 35px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 1.1em;
+            color: #5a67d8;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.125rem;
             text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
 
-        .contact-section {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 30px;
-            margin-top: 40px;
+        /* Contact Section */
+        .contact-content {
             text-align: center;
-        }
-
-        .contact-section h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-            margin-top: 0;
-            font-size: 1.8em;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .contact-info {
-            font-size: 1.1em;
-            color: #555;
-            margin-bottom: 10px;
+            font-size: 1.125rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            color: #4a5568;
         }
 
         .contact-info a {
-            color: #667eea;
+            color: #5a67d8;
             text-decoration: none;
-            transition: color 0.3s ease;
             font-weight: 600;
+            transition: color 0.3s ease;
         }
 
         .contact-info a:hover {
@@ -261,126 +316,209 @@
             text-decoration: underline;
         }
 
-        .footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            color: #999;
-            font-size: 0.9em;
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: #a0aec0;
+            padding: 3rem 2rem;
             text-align: center;
         }
 
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .container {
-                padding: 40px 20px;
+            .nav-links {
+                display: none;
             }
 
-            h1 {
-                font-size: 2em;
-            }
-
-            h2 {
-                font-size: 1.5em;
+            .hero {
+                padding: 4rem 1.5rem;
             }
 
             .tagline {
-                font-size: 1.2em;
+                font-size: 2rem;
+            }
+
+            .hero-description {
+                font-size: 1.125rem;
             }
 
             .logo {
-                max-width: 300px;
+                max-width: 280px;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
             }
 
             .services-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
             .cta-section {
-                padding: 30px 20px;
+                padding: 3rem 1.5rem;
             }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="limilologo.jpg" alt="Limilo Ltd Logo" class="logo">
-
-        <p class="tagline">Where Infrastructure Meets Intelligence</p>
-
-        <div class="section description">
-            <p>Limilo Ltd partners with businesses to build and maintain the critical systems that power their operations. We specialize in cloud infrastructure, DevOps, and production systems engineering, with particular expertise in AWS and Linux environments.</p>
-
-            <p>Our approach combines deep technical knowledge with a relentless focus on reliability. Whether you're scaling cloud infrastructure, troubleshooting complex production issues, or exploring AI-driven automation, we deliver solutions that work when it matters most.</p>
-
-            <p>We're passionate about emerging technologies and actively working with agentic AI systems and intelligent automation—helping forward-thinking organizations leverage cutting-edge capabilities to gain competitive advantage.</p>
-        </div>
-
-        <h2>Our Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">☁️</div>
-                <h3>Cloud Infrastructure</h3>
-                <p>AWS architecture, deployment, and optimization. Build scalable, resilient cloud systems that grow with your business.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">⚙️</div>
-                <h3>DevOps & Automation</h3>
-                <p>CI/CD pipelines, infrastructure as code, and process automation to accelerate delivery and reduce errors.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🔧</div>
-                <h3>Production Support</h3>
-                <p>Expert troubleshooting and maintenance for mission-critical systems. When downtime isn't an option, we deliver.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🤖</div>
-                <h3>AI & Automation</h3>
-                <p>Agentic AI systems and intelligent automation to transform operations and unlock new capabilities.</p>
-            </div>
-        </div>
-
-        <h2>Technology Expertise</h2>
-        <div class="tech-stack">
-            <div class="tech-badge">AWS</div>
-            <div class="tech-badge">Linux</div>
-            <div class="tech-badge">Python</div>
-            <div class="tech-badge">Docker</div>
-            <div class="tech-badge">Kubernetes</div>
-            <div class="tech-badge">Terraform</div>
-            <div class="tech-badge">CI/CD</div>
-            <div class="tech-badge">AI/ML</div>
-            <div class="tech-badge">DevOps</div>
-        </div>
-
-        <div class="why-limilo">
-            <h2>Why Limilo</h2>
-            <ul>
-                <li><strong>Battle-Tested Expertise:</strong> Years of experience running production systems where reliability is paramount</li>
-                <li><strong>Cloud-Native Focus:</strong> Deep AWS and Linux knowledge with proven results in complex environments</li>
-                <li><strong>Forward-Thinking:</strong> Not just maintaining systems—pioneering AI-driven automation and intelligent infrastructure</li>
-                <li><strong>Scalable Solutions:</strong> From startups to enterprise, we architect systems that scale with your growth</li>
-                <li><strong>Results-Driven:</strong> We measure success by uptime, performance, and business impact</li>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">Limilo Ltd</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
+    </nav>
 
-        <div class="cta-section">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <img src="limilologo.jpg" alt="Limilo Ltd Logo" class="logo">
+            <h1 class="tagline">Where Infrastructure Meets Intelligence</h1>
+            <p class="hero-description">Expert cloud infrastructure, DevOps, and AI-powered automation for businesses that demand reliability</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Limilo</h2>
+            <div class="about-content">
+                <p>Limilo Ltd partners with businesses to build and maintain the critical systems that power their operations. We specialize in cloud infrastructure, DevOps, and production systems engineering, with particular expertise in AWS and Linux environments.</p>
+
+                <p>Our approach combines deep technical knowledge with a relentless focus on reliability. Whether you're scaling cloud infrastructure, troubleshooting complex production issues, or exploring AI-driven automation, we deliver solutions that work when it matters most.</p>
+
+                <p>We're passionate about emerging technologies and actively working with agentic AI systems and intelligent automation—helping forward-thinking organizations leverage cutting-edge capabilities to gain competitive advantage.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-alt">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p class="section-intro">Comprehensive technology solutions designed for modern businesses</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">☁</div>
+                    <h3>Cloud Infrastructure</h3>
+                    <p>AWS architecture, deployment, and optimization. Build scalable, resilient cloud systems that grow with your business.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚙</div>
+                    <h3>DevOps & Automation</h3>
+                    <p>CI/CD pipelines, infrastructure as code, and process automation to accelerate delivery and reduce errors.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Production Support</h3>
+                    <p>Expert troubleshooting and maintenance for mission-critical systems. When downtime isn't an option, we deliver.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI & Automation</h3>
+                    <p>Agentic AI systems and intelligent automation to transform operations and unlock new capabilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section>
+        <div class="container">
+            <h2>Technology Expertise</h2>
+            <p class="section-intro">Modern tools and technologies we work with</p>
+
+            <div class="tech-stack">
+                <div class="tech-badge">AWS</div>
+                <div class="tech-badge">Linux</div>
+                <div class="tech-badge">Python</div>
+                <div class="tech-badge">Docker</div>
+                <div class="tech-badge">Kubernetes</div>
+                <div class="tech-badge">Terraform</div>
+                <div class="tech-badge">CI/CD</div>
+                <div class="tech-badge">AI/ML</div>
+                <div class="tech-badge">DevOps</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Limilo Section -->
+    <section id="why" class="section-alt">
+        <div class="container">
+            <h2>Why Limilo</h2>
+            <p class="section-intro">What sets us apart from other consultancies</p>
+
+            <div class="why-grid">
+                <div class="why-item">
+                    <strong>Battle-Tested Expertise</strong>
+                    <div class="why-item-content">Years of experience running production systems where reliability is paramount</div>
+                </div>
+                <div class="why-item">
+                    <strong>Cloud-Native Focus</strong>
+                    <div class="why-item-content">Deep AWS and Linux knowledge with proven results in complex environments</div>
+                </div>
+                <div class="why-item">
+                    <strong>Forward-Thinking</strong>
+                    <div class="why-item-content">Not just maintaining systems—pioneering AI-driven automation and intelligent infrastructure</div>
+                </div>
+                <div class="why-item">
+                    <strong>Scalable Solutions</strong>
+                    <div class="why-item-content">From startups to enterprise, we architect systems that scale with your growth</div>
+                </div>
+                <div class="why-item">
+                    <strong>Results-Driven</strong>
+                    <div class="why-item-content">We measure success by uptime, performance, and business impact</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
             <h2>Ready to Build Something Great?</h2>
             <p>Whether you need to optimize your cloud infrastructure, solve complex technical challenges, or explore how AI can transform your operations, let's talk.</p>
             <a href="mailto:info@limilo.com" class="cta-button">Schedule a Consultation</a>
         </div>
+    </section>
 
-        <div class="contact-section">
-            <h2>Get in Touch</h2>
-            <div class="contact-info">
-                <p>Email: <a href="mailto:info@limilo.com">info@limilo.com</a></p>
-                <p>Web: <a href="https://www.limilo.com">www.limilo.com</a></p>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Get in Touch</h2>
+                <div class="contact-info">
+                    <p>Email: <a href="mailto:info@limilo.com">info@limilo.com</a></p>
+                    <p>Web: <a href="https://www.limilo.com">www.limilo.com</a></p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="footer">
-            <p>&copy; 2025 Limilo Ltd. All rights reserved.</p>
-            <p>Registered in England and Wales. Company No. 07778174</p>
-        </div>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Limilo Ltd. All rights reserved.</p>
+        <p>Registered in England and Wales. Company No. 07778174</p>
+    </footer>
 </body>
 </html>
