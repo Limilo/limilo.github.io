@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Limilo Ltd - Cloud infrastructure, DevOps, and AI-powered automation specialists">
+    <meta name="description" content="Limilo - AI consultancy specialising in agentic AI development, AI infrastructure, and production AI systems. We build AI that ships.">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="alternate icon" type="image/jpeg" href="favicon.jpg">
-    <title>Limilo Ltd - Cloud Infrastructure & AI Automation Experts</title>
+    <title>Limilo - Agentic AI Development & AI Infrastructure</title>
     <style>
         * {
             margin: 0;
@@ -101,7 +101,7 @@
 
         .hero-description {
             font-size: 1.25rem;
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto;
             line-height: 1.7;
             color: #4a5568;
@@ -136,6 +136,24 @@
             max-width: 700px;
             margin: 0 auto 3rem;
             line-height: 1.7;
+        }
+
+        /* Problem Section */
+        .problem-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .problem-content p {
+            font-size: 1.25rem;
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .problem-content p:last-child {
+            margin-bottom: 0;
         }
 
         /* About Section */
@@ -200,22 +218,64 @@
         }
 
         /* Technology Stack */
+        .tech-intro {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            text-align: center;
+        }
+
+        .tech-intro p {
+            font-size: 1.125rem;
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .tech-intro .highlight {
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        .tech-categories {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tech-category {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .tech-category h4 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #b91c1c;
+        }
+
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 3rem;
+            gap: 0.75rem;
         }
 
         .tech-badge {
-            background: white;
-            border: 2px solid #e2e8f0;
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
             color: #2d3748;
-            padding: 0.75rem 1.5rem;
+            padding: 0.5rem 1rem;
             border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.95rem;
+            font-weight: 500;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
         }
 
@@ -223,14 +283,34 @@
             border-color: #b91c1c;
             background: #b91c1c;
             color: white;
-            transform: translateY(-2px);
+        }
+
+        .tech-badge.primary {
+            background: #2d3748;
+            border-color: #2d3748;
+            color: white;
+        }
+
+        .tech-badge.primary:hover {
+            background: #b91c1c;
+            border-color: #b91c1c;
         }
 
         /* Why Limilo */
+        .why-statement {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-align: center;
+            font-size: 1.375rem;
+            color: #2d3748;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
         .why-grid {
             display: grid;
             gap: 1.5rem;
-            margin-top: 3rem;
+            margin-top: 2rem;
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
@@ -253,6 +333,76 @@
             color: #4a5568;
             margin-top: 0.5rem;
             line-height: 1.7;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: #b91c1c;
+        }
+
+        .project-placeholder {
+            height: 120px;
+            background: linear-gradient(135deg, #f7fafc 0%, #e2e8f0 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-card p {
+            color: #4a5568;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-tech span {
+            background: #f7fafc;
+            color: #4a5568;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .coming-soon-note {
+            text-align: center;
+            margin-top: 2rem;
+            color: #718096;
+            font-style: italic;
         }
 
         /* CTA Section */
@@ -370,6 +520,18 @@
                 gap: 1.5rem;
             }
 
+            .tech-categories {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-statement {
+                font-size: 1.125rem;
+            }
+
             .cta-section {
                 padding: 3rem 1.5rem;
             }
@@ -385,10 +547,11 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="nav-logo">Limilo Ltd</a>
+            <a href="#" class="nav-logo">Limilo</a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
+                <li><a href="#problem">The Problem</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#how-we-build">How We Build</a></li>
                 <li><a href="#why">Why Us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -398,22 +561,19 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
-            <img src="limilologo.jpg" alt="Limilo Ltd Logo" class="logo">
+            <img src="limilologo.jpg" alt="Limilo Logo" class="logo">
             <h1 class="tagline">Where Infrastructure Meets Intelligence</h1>
-            <p class="hero-description">Expert cloud infrastructure, DevOps, and AI-powered automation for businesses that demand reliability</p>
+            <p class="hero-description">We build agentic AI systems and the infrastructure to run them in production. From prototype to reliable deployment.</p>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
+    <!-- Problem Section -->
+    <section id="problem">
         <div class="container">
-            <h2>About Limilo</h2>
-            <div class="about-content">
-                <p>Limilo Ltd partners with businesses to build and maintain the critical systems that power their operations. We specialize in cloud infrastructure, DevOps, and production systems engineering, with particular expertise in AWS and Linux environments.</p>
-
-                <p>Our approach combines deep technical knowledge with a relentless focus on reliability. Whether you're scaling cloud infrastructure, troubleshooting complex production issues, or exploring AI-driven automation, we deliver solutions that work when it matters most.</p>
-
-                <p>We're passionate about emerging technologies and actively working with agentic AI systems and intelligent automation—helping forward-thinking organizations leverage cutting-edge capabilities to gain competitive advantage.</p>
+            <h2>The Problem We Solve</h2>
+            <div class="problem-content">
+                <p>Most teams building with AI struggle to get from experiment to production. The demo works, but scaling it reliably? That's where things break down.</p>
+                <p>We bridge that gap — designing, building, and deploying AI systems that work reliably at scale. No more prototype purgatory.</p>
             </div>
         </div>
     </section>
@@ -422,49 +582,63 @@
     <section id="services" class="section-alt">
         <div class="container">
             <h2>Our Services</h2>
-            <p class="section-intro">Comprehensive technology solutions designed for modern businesses</p>
+            <p class="section-intro">End-to-end AI development with production-grade infrastructure</p>
 
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">☁</div>
-                    <h3>Cloud Infrastructure</h3>
-                    <p>AWS architecture, deployment, and optimization. Build scalable, resilient cloud systems that grow with your business.</p>
+                    <div class="service-icon">🤖</div>
+                    <h3>Agentic AI Development</h3>
+                    <p>Custom AI agents, LLM-powered applications, and autonomous workflows. We build AI systems that take action, not just answer questions.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">⚙</div>
-                    <h3>DevOps & Automation</h3>
-                    <p>CI/CD pipelines, infrastructure as code, and process automation to accelerate delivery and reduce errors.</p>
+                    <h3>AI Infrastructure & MLOps</h3>
+                    <p>Model serving, orchestration, deployment pipelines, and monitoring. The operational foundation that keeps AI systems running in production.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">☁</div>
+                    <h3>Cloud & Platform Engineering</h3>
+                    <p>AWS architecture, Kubernetes, infrastructure as code — the foundation we build AI on. Scalable, secure, and production-ready.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🔧</div>
-                    <h3>Production Support</h3>
-                    <p>Expert troubleshooting and maintenance for mission-critical systems. When downtime isn't an option, we deliver.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🤖</div>
-                    <h3>AI & Automation</h3>
-                    <p>Agentic AI systems and intelligent automation to transform operations and unlock new capabilities.</p>
+                    <h3>Production Support & Reliability</h3>
+                    <p>AI systems need to stay up too. Monitoring, incident response, and reliability engineering for AI workloads.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Technology Section -->
-    <section>
+    <section id="how-we-build">
         <div class="container">
-            <h2>Technology Expertise</h2>
-            <p class="section-intro">Modern tools and technologies we work with</p>
+            <h2>How We Build</h2>
+            <div class="tech-intro">
+                <p>We go deep rather than wide. Currently building primarily with <span class="highlight">Anthropic's Claude</span> — the leading model for agentic work — while staying close to developments across the broader ecosystem.</p>
+                <p>This is a deliberate choice: Claude's strength in tool use, reliability, and complex reasoning makes it ideal for production AI systems.</p>
+            </div>
 
-            <div class="tech-stack">
-                <div class="tech-badge">AWS</div>
-                <div class="tech-badge">Linux</div>
-                <div class="tech-badge">Python</div>
-                <div class="tech-badge">Docker</div>
-                <div class="tech-badge">Kubernetes</div>
-                <div class="tech-badge">Terraform</div>
-                <div class="tech-badge">CI/CD</div>
-                <div class="tech-badge">AI/ML</div>
-                <div class="tech-badge">DevOps</div>
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h4>AI Stack</h4>
+                    <div class="tech-stack">
+                        <div class="tech-badge primary">Claude</div>
+                        <div class="tech-badge primary">Claude SDK</div>
+                        <div class="tech-badge">Python</div>
+                        <div class="tech-badge">LangChain</div>
+                        <div class="tech-badge">Vector DBs</div>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h4>Infrastructure</h4>
+                    <div class="tech-stack">
+                        <div class="tech-badge">AWS</div>
+                        <div class="tech-badge">Kubernetes</div>
+                        <div class="tech-badge">Terraform</div>
+                        <div class="tech-badge">Docker</div>
+                        <div class="tech-badge">Linux</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -472,40 +646,77 @@
     <!-- Why Limilo Section -->
     <section id="why" class="section-alt">
         <div class="container">
-            <h2>Why Limilo</h2>
-            <p class="section-intro">What sets us apart from other consultancies</p>
+            <h2>Why Us</h2>
+            <p class="why-statement">Most AI developers can't deploy. Most DevOps engineers don't understand AI.<br>We do both.</p>
 
             <div class="why-grid">
                 <div class="why-item">
-                    <strong>Battle-Tested Expertise</strong>
-                    <div class="why-item-content">Years of experience running production systems where reliability is paramount</div>
+                    <strong>Production Infrastructure DNA</strong>
+                    <div class="why-item-content">Years of experience building and running production systems, now focused entirely on AI. We don't just build AI — we ship it reliably.</div>
                 </div>
                 <div class="why-item">
-                    <strong>Cloud-Native Focus</strong>
-                    <div class="why-item-content">Deep AWS and Linux knowledge with proven results in complex environments</div>
+                    <strong>Deep AI Expertise</strong>
+                    <div class="why-item-content">Hands-on experience with agentic systems, LLM applications, and the nuances of making AI work in the real world.</div>
                 </div>
                 <div class="why-item">
-                    <strong>Forward-Thinking</strong>
-                    <div class="why-item-content">Not just maintaining systems—pioneering AI-driven automation and intelligent infrastructure</div>
+                    <strong>End-to-End Ownership</strong>
+                    <div class="why-item-content">From prototype to production monitoring. No handoffs, no gaps, no "that's someone else's problem."</div>
                 </div>
                 <div class="why-item">
-                    <strong>Scalable Solutions</strong>
-                    <div class="why-item-content">From startups to enterprise, we architect systems that scale with your growth</div>
-                </div>
-                <div class="why-item">
-                    <strong>Results-Driven</strong>
-                    <div class="why-item-content">We measure success by uptime, performance, and business impact</div>
+                    <strong>Practical, Not Theoretical</strong>
+                    <div class="why-item-content">We build systems that work at scale, handle edge cases, and stay up when it matters. No demo-ware.</div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <p class="section-intro">A selection of what we've built</p>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-placeholder">Project 1</div>
+                    <h3>Coming Soon</h3>
+                    <p>Agentic workflow automation for enterprise operations.</p>
+                    <div class="project-tech">
+                        <span>Claude</span>
+                        <span>AWS</span>
+                        <span>Python</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-placeholder">Project 2</div>
+                    <h3>Coming Soon</h3>
+                    <p>LLM-powered analysis and reporting system.</p>
+                    <div class="project-tech">
+                        <span>Claude SDK</span>
+                        <span>Kubernetes</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-placeholder">Project 3</div>
+                    <h3>Coming Soon</h3>
+                    <p>Production AI infrastructure deployment.</p>
+                    <div class="project-tech">
+                        <span>Terraform</span>
+                        <span>AWS</span>
+                        <span>Docker</span>
+                    </div>
+                </div>
+            </div>
+            <p class="coming-soon-note">Case studies in development — check back soon.</p>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Ready to Build Something Great?</h2>
-            <p>Whether you need to optimize your cloud infrastructure, solve complex technical challenges, or explore how AI can transform your operations, let's talk.</p>
-            <a href="mailto:info@limilo.com" class="cta-button">Schedule a Consultation</a>
+            <h2>Ready to Ship AI?</h2>
+            <p>Whether you're building your first AI agent or scaling an existing system, we can help you get from prototype to production.</p>
+            <a href="mailto:info@limilo.com" class="cta-button">Start a Conversation</a>
         </div>
     </section>
 
