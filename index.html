@@ -335,6 +335,41 @@
             line-height: 1.7;
         }
 
+        /* Delivery Principles */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .principle-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            border-top: 4px solid #b91c1c;
+        }
+
+        .principle-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .principle-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.75rem;
+        }
+
+        .principle-card p {
+            color: #4a5568;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
         /* Projects Section */
         .projects-grid {
             display: grid;
@@ -524,6 +559,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .principles-grid {
+                grid-template-columns: 1fr;
+            }
+
             .projects-grid {
                 grid-template-columns: 1fr;
             }
@@ -665,6 +704,29 @@
                 <div class="why-item">
                     <strong>Practical, Not Theoretical</strong>
                     <div class="why-item-content">We build systems that work at scale, handle edge cases, and stay up when it matters. No demo-ware.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Principles Section -->
+    <section id="delivery-principles" class="section-alt">
+        <div class="container">
+            <h2>Delivery Principles</h2>
+            <p class="section-intro">How we turn AI ambition into production reality</p>
+
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <h3>Architecture with Outcome Ownership</h3>
+                    <p>We design systems around business outcomes, not technology choices. Every architectural decision maps to a measurable result, and we own the delivery end to end.</p>
+                </div>
+                <div class="principle-card">
+                    <h3>Implementation with Production Guardrails</h3>
+                    <p>Code ships with built-in safety nets — automated testing, rollback strategies, and deployment gates that catch issues before they reach users.</p>
+                </div>
+                <div class="principle-card">
+                    <h3>Operations with Measurable Reliability</h3>
+                    <p>Every system we deliver includes observability, SLOs, and incident response. Reliability isn't an afterthought — it's baked into the delivery from day one.</p>
                 </div>
             </div>
         </div>
