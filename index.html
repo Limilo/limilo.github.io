@@ -335,6 +335,50 @@
             line-height: 1.7;
         }
 
+        /* Delivery Principles */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .principle-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .principle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: #b91c1c;
+        }
+
+        .principle-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .principle-card p {
+            color: #4a5568;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .principle-accent {
+            width: 40px;
+            height: 4px;
+            background: linear-gradient(135deg, #b91c1c 0%, #374151 100%);
+            border-radius: 2px;
+            margin: 0 auto 1.5rem;
+        }
+
         /* Projects Section */
         .projects-grid {
             display: grid;
@@ -524,6 +568,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .principles-grid {
+                grid-template-columns: 1fr;
+            }
+
             .projects-grid {
                 grid-template-columns: 1fr;
             }
@@ -665,6 +713,32 @@
                 <div class="why-item">
                     <strong>Practical, Not Theoretical</strong>
                     <div class="why-item-content">We build systems that work at scale, handle edge cases, and stay up when it matters. No demo-ware.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Principles Section -->
+    <section id="principles">
+        <div class="container">
+            <h2>Delivery Principles</h2>
+            <p class="section-intro">The standards that guide every engagement</p>
+
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <div class="principle-accent"></div>
+                    <h3>Architecture with Outcome Ownership</h3>
+                    <p>We design systems tied to business results, not just technical elegance. Every architectural decision maps to a measurable outcome we take responsibility for.</p>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-accent"></div>
+                    <h3>Implementation with Production Guardrails</h3>
+                    <p>Code ships with built-in safety nets — automated testing, rollback strategies, and observability from day one. Nothing reaches production without guardrails in place.</p>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-accent"></div>
+                    <h3>Operations with Measurable Reliability</h3>
+                    <p>We define SLOs, track error budgets, and instrument everything. Reliability isn't a goal — it's a metric we continuously measure and improve.</p>
                 </div>
             </div>
         </div>
