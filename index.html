@@ -3,739 +3,693 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Limilo - AI consultancy specialising in agentic AI development, AI infrastructure, and production AI systems. We build AI that ships.">
+    <title>Limilo Ltd | Infrastructure, AI &amp; Agentic Development</title>
+    <meta name="description" content="Limilo builds the infrastructure, AI systems and agentic workflows that let teams ship faster and run reliably.">
+    <meta name="theme-color" content="#0f1115">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.limilo.com/">
+    <meta property="og:title" content="Limilo Ltd | Infrastructure, AI &amp; Agentic Development">
+    <meta property="og:description" content="We build the infrastructure, AI systems and agentic workflows that let teams ship faster and run reliably.">
+    <meta property="og:image" content="https://www.limilo.com/Limilo_Logo.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="alternate icon" type="image/jpeg" href="favicon.jpg">
-    <title>Limilo - Agentic AI Development & AI Infrastructure</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --red: #c8102e;
+            --red-deep: #9f0d24;
+            --red-soft: #fdecee;
+            --ink: #0f1115;
+            --ink-2: #1a1d24;
+            --ink-3: #262a33;
+            --text: #1f2329;
+            --muted: #5b6270;
+            --line: #e6e3de;
+            --paper: #faf8f5;
+            --white: #ffffff;
+            --green: #3ccf8e;
+            --amber: #f5b14c;
+
+            --font-display: 'Space Grotesk', system-ui, sans-serif;
+            --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+            --max: 1160px;
+            --radius: 14px;
         }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: var(--font-body);
+            color: var(--text);
+            background: var(--paper);
             line-height: 1.6;
-            color: #2d3748;
-            background: #ffffff;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
-        /* Navigation */
+        a { color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+        .eyebrow {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--red);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .eyebrow::before {
+            content: "";
+            width: 22px;
+            height: 1px;
+            background: currentColor;
+        }
+
+        h1, h2, h3 { font-family: var(--font-display); color: var(--ink); line-height: 1.08; letter-spacing: -0.02em; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 22px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.98rem;
+            text-decoration: none;
+            transition: transform .2s ease, background .2s ease, box-shadow .2s ease, color .2s ease;
+            white-space: nowrap;
+        }
+        .btn-primary { background: var(--red); color: var(--white); box-shadow: 0 8px 24px -10px rgba(200,16,46,.6); }
+        .btn-primary:hover { background: var(--red-deep); transform: translateY(-2px); }
+        .btn-ghost { color: var(--ink); border: 1px solid #d6d2cb; background: var(--white); }
+        .btn-ghost:hover { border-color: var(--ink); transform: translateY(-2px); }
+        .btn .arrow { transition: transform .2s ease; }
+        .btn:hover .arrow { transform: translateX(3px); }
+
+        /* ---------- Nav ---------- */
         nav {
-            background: #ffffff;
-            border-bottom: 1px solid #e2e8f0;
-            padding: 1rem 0;
             position: sticky;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            z-index: 50;
+            background: rgba(250, 248, 245, 0.85);
+            backdrop-filter: saturate(160%) blur(12px);
+            -webkit-backdrop-filter: saturate(160%) blur(12px);
+            border-bottom: 1px solid transparent;
+            transition: border-color .2s ease;
         }
+        nav.scrolled { border-bottom-color: var(--line); }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+        .nav-logo img { height: 30px; width: auto; mix-blend-mode: multiply; }
+        .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+        .nav-links a { text-decoration: none; font-size: 0.95rem; color: var(--muted); font-weight: 500; transition: color .2s; }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-links a.nav-cta { padding: 10px 18px; font-size: 0.9rem; color: var(--white); }
+        .nav-links a.nav-cta:hover { color: var(--white); }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-logo {
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: #2d3748;
-            text-decoration: none;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .nav-logo:hover {
-            color: #b91c1c;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #4a5568;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #b91c1c;
-        }
-
-        /* Hero Section */
+        /* ---------- Hero ---------- */
         .hero {
-            background: #ffffff;
-            padding: 6rem 2rem;
-            text-align: center;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .hero-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            max-width: 400px;
-            height: auto;
-            margin: 0 auto 3rem;
-            display: block;
-        }
-
-        .tagline {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            color: #2d3748;
-        }
-
-        .hero-description {
-            font-size: 1.25rem;
-            max-width: 750px;
-            margin: 0 auto;
-            line-height: 1.7;
-            color: #4a5568;
-        }
-
-        /* Section Styles */
-        section {
-            padding: 5rem 2rem;
-        }
-
-        .section-alt {
-            background: #f7fafc;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #2d3748;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .section-intro {
-            text-align: center;
-            font-size: 1.125rem;
-            color: #4a5568;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            line-height: 1.7;
-        }
-
-        /* Problem Section */
-        .problem-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .problem-content p {
-            font-size: 1.25rem;
-            color: #4a5568;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .problem-content p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* About Section */
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.125rem;
-            color: #4a5568;
-            line-height: 1.8;
-        }
-
-        .about-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .service-card {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 2.5rem;
-            transition: all 0.3s ease;
             position: relative;
+            padding: 88px 0 96px;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(to right, rgba(15,17,21,.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(15,17,21,.05) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: radial-gradient(ellipse 70% 60% at 70% 40%, #000 30%, transparent 75%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 60% at 70% 40%, #000 30%, transparent 75%);
+            pointer-events: none;
+        }
+        .hero-grid {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1.05fr 1fr;
+            gap: 56px;
+            align-items: center;
+        }
+        .hero h1 {
+            font-size: clamp(2.6rem, 5.6vw, 4.6rem);
+            font-weight: 700;
+            margin: 22px 0 24px;
+        }
+        .hero h1 .accent { color: var(--red); }
+        .hero-lede { font-size: 1.18rem; color: var(--muted); max-width: 34rem; margin-bottom: 36px; }
+        .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+        .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 40px; }
+        .pill {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            padding: 6px 12px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: var(--white);
+            color: var(--muted);
         }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-color: #b91c1c;
+        /* Terminal */
+        .terminal {
+            background: var(--ink);
+            border-radius: var(--radius);
+            box-shadow: 0 40px 80px -30px rgba(15,17,21,.45), 0 0 0 1px rgba(255,255,255,.04) inset;
+            overflow: hidden;
+            font-family: var(--font-mono);
+            font-size: 0.84rem;
+            color: #c9ced8;
+            transform: perspective(1400px) rotateY(-4deg) rotateX(2deg);
         }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #b91c1c 0%, #374151 100%);
-            border-radius: 12px;
+        .term-bar {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.75rem;
-            margin-bottom: 1.5rem;
+            gap: 8px;
+            padding: 14px 16px;
+            background: var(--ink-2);
+            border-bottom: 1px solid rgba(255,255,255,.06);
         }
+        .term-dot { width: 11px; height: 11px; border-radius: 50%; background: #3a3f4a; }
+        .term-dot:first-child { background: var(--red); }
+        .term-title { margin-left: 10px; font-size: 0.76rem; color: #7d8494; }
+        .term-body { padding: 20px 20px 24px; min-height: 330px; line-height: 1.75; }
+        .term-line { opacity: 0; transform: translateY(4px); transition: opacity .35s ease, transform .35s ease; white-space: pre-wrap; word-break: break-word; }
+        .term-line.show { opacity: 1; transform: none; }
+        .t-prompt { color: var(--red); }
+        .t-dim { color: #6c7383; }
+        .t-tool { color: #8fb8ff; }
+        .t-ok { color: var(--green); }
+        .t-warn { color: var(--amber); }
+        .t-white { color: #f3f4f6; }
+        .cursor { display: inline-block; width: 8px; height: 1.05em; background: var(--red); vertical-align: -2px; animation: blink 1s steps(1) infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
 
-        .service-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #2d3748;
-            margin-bottom: 1rem;
+        /* ---------- Sections ---------- */
+        section { padding: 104px 0; }
+        .section-head { max-width: 680px; margin-bottom: 56px; }
+        .section-head h2 { font-size: clamp(2rem, 4vw, 3rem); margin: 18px 0 16px; }
+        .section-head p { color: var(--muted); font-size: 1.1rem; }
+
+        /* Pillars */
+        .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .pillar {
+            position: relative;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 34px 30px 32px;
+            transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+            overflow: hidden;
         }
-
-        .service-card p {
-            color: #4a5568;
-            line-height: 1.7;
-            font-size: 1rem;
+        .pillar::after {
+            content: "";
+            position: absolute;
+            left: 0; top: 0; right: 0;
+            height: 3px;
+            background: var(--red);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .35s ease;
         }
-
-        /* Technology Stack */
-        .tech-intro {
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            text-align: center;
+        .pillar:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -24px rgba(15,17,21,.25); }
+        .pillar:hover::after { transform: scaleX(1); }
+        .pillar-num { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); }
+        .pillar-icon {
+            width: 48px; height: 48px;
+            border-radius: 12px;
+            background: var(--red-soft);
+            color: var(--red);
+            display: grid;
+            place-items: center;
+            margin: 22px 0 22px;
         }
+        .pillar-icon svg { width: 24px; height: 24px; }
+        .pillar h3 { font-size: 1.45rem; margin-bottom: 12px; }
+        .pillar > p { color: var(--muted); margin-bottom: 22px; }
+        .pillar ul { list-style: none; border-top: 1px solid var(--line); padding-top: 18px; display: grid; gap: 10px; }
+        .pillar li { display: flex; gap: 10px; font-size: 0.95rem; }
+        .pillar li::before { content: "→"; color: var(--red); font-family: var(--font-mono); flex-shrink: 0; }
 
-        .tech-intro p {
-            font-size: 1.125rem;
-            color: #4a5568;
-            line-height: 1.8;
-            margin-bottom: 1rem;
+        /* Dark band: what we build */
+        .dark {
+            background: var(--ink);
+            color: #c9ced8;
+            position: relative;
+            overflow: hidden;
         }
+        .dark::before {
+            content: "";
+            position: absolute;
+            width: 700px; height: 700px;
+            right: -200px; top: -260px;
+            background: radial-gradient(circle, rgba(200,16,46,.28), transparent 65%);
+            pointer-events: none;
+        }
+        .dark h2, .dark h3 { color: var(--white); }
+        .dark .section-head p { color: #9aa1af; }
+        .dark .eyebrow { color: #ff5a6e; }
 
-        .tech-intro .highlight {
-            color: #2d3748;
+        .builds { position: relative; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); overflow: hidden; }
+        .build { background: var(--ink); padding: 36px 34px; transition: background .25s ease; }
+        .build:hover { background: var(--ink-2); }
+        .build-tag { font-family: var(--font-mono); font-size: 0.75rem; color: #ff5a6e; letter-spacing: .06em; text-transform: uppercase; }
+        .build h3 { font-size: 1.35rem; margin: 12px 0 10px; }
+        .build p { color: #9aa1af; font-size: 0.98rem; }
+
+        /* Stack */
+        .stack { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .stack-group { border-top: 2px solid var(--ink); padding-top: 20px; }
+        .stack-group h3 { font-size: 1.05rem; font-family: var(--font-mono); font-weight: 500; letter-spacing: 0; margin-bottom: 18px; color: var(--ink); }
+        .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+        .chip {
+            font-size: 0.9rem;
+            padding: 8px 14px;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            transition: border-color .2s, color .2s;
+        }
+        .chip:hover { border-color: var(--red); color: var(--red); }
+
+        /* Approach */
+        .approach-wrap { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+        .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; counter-reset: step; }
+        .step { padding: 0 28px 0 0; position: relative; }
+        .step + .step { padding-left: 28px; border-left: 1px solid var(--line); }
+        .step-num { font-family: var(--font-display); font-size: 3rem; font-weight: 700; color: var(--red); line-height: 1; margin-bottom: 18px; }
+        .step h3 { font-size: 1.2rem; margin-bottom: 8px; }
+        .step p { color: var(--muted); font-size: 0.97rem; }
+
+        /* About */
+        .about { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start; }
+        .about h2 { font-size: clamp(2rem, 4vw, 3rem); margin-top: 18px; }
+        .about-body p { font-size: 1.1rem; color: var(--muted); margin-bottom: 20px; }
+        .about-body p strong { color: var(--ink); font-weight: 600; }
+
+        /* Contact */
+        .contact {
+            background: var(--red);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        .contact::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(to right, rgba(255,255,255,.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,.08) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: linear-gradient(to left, #000, transparent 70%);
+            -webkit-mask-image: linear-gradient(to left, #000, transparent 70%);
+        }
+        .contact-inner { position: relative; display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: end; }
+        .contact h2 { color: var(--white); font-size: clamp(2.2rem, 5vw, 3.8rem); margin: 18px 0 18px; }
+        .contact .eyebrow { color: rgba(255,255,255,.85); }
+        .contact p { font-size: 1.15rem; color: rgba(255,255,255,.88); max-width: 34rem; }
+        .contact-card {
+            background: rgba(0,0,0,.18);
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: var(--radius);
+            padding: 28px;
+        }
+        .contact-label { font-family: var(--font-mono); font-size: 0.76rem; text-transform: uppercase; letter-spacing: .08em; opacity: .75; margin-bottom: 8px; }
+        .contact-email {
+            font-family: var(--font-display);
+            font-size: clamp(1.4rem, 3vw, 2rem);
             font-weight: 600;
-        }
-
-        .tech-categories {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .tech-category {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 2rem;
-        }
-
-        .tech-category h4 {
-            font-size: 1.125rem;
-            font-weight: 700;
-            color: #2d3748;
-            margin-bottom: 1rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid #b91c1c;
-        }
-
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .tech-badge {
-            background: #f7fafc;
-            border: 1px solid #e2e8f0;
-            color: #2d3748;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .tech-badge:hover {
-            border-color: #b91c1c;
-            background: #b91c1c;
-            color: white;
-        }
-
-        .tech-badge.primary {
-            background: #2d3748;
-            border-color: #2d3748;
-            color: white;
-        }
-
-        .tech-badge.primary:hover {
-            background: #b91c1c;
-            border-color: #b91c1c;
-        }
-
-        /* Why Limilo */
-        .why-statement {
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            text-align: center;
-            font-size: 1.375rem;
-            color: #2d3748;
-            line-height: 1.7;
-            font-weight: 500;
-        }
-
-        .why-grid {
-            display: grid;
-            gap: 1.5rem;
-            margin-top: 2rem;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .why-item {
-            background: white;
-            padding: 1.5rem;
-            border-left: 4px solid #b91c1c;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .why-item strong {
-            color: #2d3748;
-            font-size: 1.125rem;
-        }
-
-        .why-item-content {
-            color: #4a5568;
-            margin-top: 0.5rem;
-            line-height: 1.7;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .project-card {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            border-color: #b91c1c;
-        }
-
-        .project-placeholder {
-            height: 120px;
-            background: linear-gradient(135deg, #f7fafc 0%, #e2e8f0 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            color: #a0aec0;
-            font-size: 0.9rem;
-        }
-
-        .project-card h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #2d3748;
-            margin-bottom: 0.75rem;
-        }
-
-        .project-card p {
-            color: #4a5568;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .project-tech span {
-            background: #f7fafc;
-            color: #4a5568;
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .coming-soon-note {
-            text-align: center;
-            margin-top: 2rem;
-            color: #718096;
-            font-style: italic;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #b91c1c 0%, #374151 100%);
-            color: white;
-            text-align: center;
-            padding: 5rem 2rem;
-        }
-
-        .cta-section h2 {
-            color: white;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-section p {
-            font-size: 1.25rem;
-            opacity: 0.95;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            line-height: 1.7;
-        }
-
-        .cta-button {
+            text-decoration: none;
             display: inline-block;
-            background: white;
-            color: #b91c1c;
-            padding: 1rem 3rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.125rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-bottom: 2px solid rgba(255,255,255,.4);
+            transition: border-color .2s;
+            margin-bottom: 22px;
+            word-break: break-all;
         }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Contact Section */
-        .contact-content {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-info {
-            font-size: 1.125rem;
-            margin-top: 2rem;
-        }
-
-        .contact-info p {
-            margin-bottom: 1rem;
-            color: #4a5568;
-        }
-
-        .contact-info a {
-            color: #b91c1c;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .contact-info a:hover {
-            color: #991b1b;
-            text-decoration: underline;
-        }
+        .contact-email:hover { border-color: var(--white); }
+        .btn-light { background: var(--white); color: var(--red); }
+        .btn-light:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -10px rgba(0,0,0,.4); }
 
         /* Footer */
-        footer {
-            background: #2d3748;
-            color: #a0aec0;
-            padding: 3rem 2rem;
-            text-align: center;
+        footer { background: var(--ink); color: #7d8494; padding: 40px 0; font-size: 0.88rem; }
+        .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+        footer a { color: #c9ced8; text-decoration: none; }
+        footer a:hover { color: var(--white); }
+
+        /* Reveal */
+        .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+        .reveal.in { opacity: 1; transform: none; }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .reveal, .term-line { opacity: 1 !important; transform: none !important; transition: none !important; }
+            .cursor { animation: none; }
         }
 
-        footer p {
-            margin-bottom: 0.5rem;
+        /* ---------- Responsive ---------- */
+        @media (max-width: 980px) {
+            .hero-grid, .about, .contact-inner { grid-template-columns: 1fr; }
+            .hero { padding: 56px 0 72px; }
+            .terminal { transform: none; }
+            .pillars, .stack { grid-template-columns: 1fr; }
+            .steps { grid-template-columns: repeat(2, 1fr); row-gap: 40px; }
+            .step:nth-child(3) { padding-left: 0; border-left: 0; }
+            .about { gap: 24px; }
         }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                padding: 4rem 1.5rem;
-            }
-
-            .tagline {
-                font-size: 2rem;
-            }
-
-            .hero-description {
-                font-size: 1.125rem;
-            }
-
-            .logo {
-                max-width: 280px;
-            }
-
-            section {
-                padding: 3rem 1.5rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .tech-categories {
-                grid-template-columns: 1fr;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .why-statement {
-                font-size: 1.125rem;
-            }
-
-            .cta-section {
-                padding: 3rem 1.5rem;
-            }
-        }
-
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
+        @media (max-width: 720px) {
+            section { padding: 72px 0; }
+            .wrap { padding: 0 20px; }
+            .nav-links li:not(:last-child) { display: none; }
+            .nav-logo img { height: 26px; }
+            .hero h1 { margin-top: 18px; }
+            .hero-lede { font-size: 1.06rem; }
+            .term-body { font-size: 0.76rem; min-height: 300px; padding: 16px; }
+            .builds { grid-template-columns: 1fr; }
+            .build { padding: 28px 24px; }
+            .steps { grid-template-columns: 1fr; }
+            .step, .step + .step { padding: 0; border-left: 0; }
+            .step + .step { padding-top: 28px; border-top: 1px solid var(--line); }
+            .section-head { margin-bottom: 40px; }
+            .hero-ctas .btn { flex: 1 1 auto; justify-content: center; }
+            .hero-pills { display: none; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="nav-logo">Limilo</a>
+
+    <nav id="nav">
+        <div class="wrap nav-inner">
+            <a href="#top" class="nav-logo" aria-label="Limilo home"><img src="limilologo.jpg" alt="Limilo"></a>
             <ul class="nav-links">
-                <li><a href="#problem">The Problem</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#how-we-build">How We Build</a></li>
-                <li><a href="#why">Why Us</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#focus">Focus</a></li>
+                <li><a href="#build">What we build</a></li>
+                <li><a href="#approach">Approach</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact" class="btn btn-primary nav-cta">Let's talk</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <img src="limilologo.jpg" alt="Limilo Logo" class="logo">
-            <h1 class="tagline">Where Infrastructure Meets Intelligence</h1>
-            <p class="hero-description">We build agentic AI systems and the infrastructure to run them in production. From prototype to reliable deployment.</p>
-        </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section id="problem">
-        <div class="container">
-            <h2>The Problem We Solve</h2>
-            <div class="problem-content">
-                <p>Most teams building with AI struggle to get from experiment to production. The demo works, but scaling it reliably? That's where things break down.</p>
-                <p>We bridge that gap — designing, building, and deploying AI systems that work reliably at scale. No more prototype purgatory.</p>
+    <header class="hero" id="top">
+        <div class="wrap hero-grid">
+            <div>
+                <span class="eyebrow">Infrastructure · AI · Agentic development</span>
+                <h1>Infrastructure for the <span class="accent">agentic</span> era.</h1>
+                <p class="hero-lede">Limilo builds the platforms, AI systems and agent-driven workflows that let teams ship faster and run reliably, from cloud foundations to autonomous agents in production.</p>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn btn-primary">Start a conversation <span class="arrow">→</span></a>
+                    <a href="#build" class="btn btn-ghost">See what we build</a>
+                </div>
+                <div class="hero-pills">
+                    <span class="pill">AWS</span>
+                    <span class="pill">Terraform</span>
+                    <span class="pill">LLM APIs</span>
+                    <span class="pill">MCP</span>
+                    <span class="pill">Agent SDKs</span>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section-alt">
-        <div class="container">
-            <h2>Our Services</h2>
-            <p class="section-intro">End-to-end AI development with production-grade infrastructure</p>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🤖</div>
-                    <h3>Agentic AI Development</h3>
-                    <p>Custom AI agents, LLM-powered applications, and autonomous workflows. We build AI systems that take action, not just answer questions.</p>
+            <div class="terminal" aria-hidden="true">
+                <div class="term-bar">
+                    <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+                    <span class="term-title">agent@limilo: ~/platform</span>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">⚙</div>
-                    <h3>AI Infrastructure & MLOps</h3>
-                    <p>Model serving, orchestration, deployment pipelines, and monitoring. The operational foundation that keeps AI systems running in production.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">☁</div>
-                    <h3>Cloud & Platform Engineering</h3>
-                    <p>AWS architecture, Kubernetes, infrastructure as code — the foundation we build AI on. Scalable, secure, and production-ready.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔧</div>
-                    <h3>Production Support & Reliability</h3>
-                    <p>AI systems need to stay up too. Monitoring, incident response, and reliability engineering for AI workloads.</p>
+                <div class="term-body" id="term">
+                    <div class="term-line"><span class="t-prompt">❯</span> <span class="t-white">agent run "add staging env + eval gate"</span></div>
+                    <div class="term-line t-dim">  planning… 4 steps</div>
+                    <div class="term-line"><span class="t-tool">  ▸ read</span>   infra/environments/*.tf</div>
+                    <div class="term-line"><span class="t-tool">  ▸ edit</span>   modules/stack → staging.tf <span class="t-ok">+42</span></div>
+                    <div class="term-line"><span class="t-tool">  ▸ run</span>    terraform plan <span class="t-dim">(12 to add)</span></div>
+                    <div class="term-line"><span class="t-tool">  ▸ run</span>    evals/regression <span class="t-ok">✓ 48/48</span></div>
+                    <div class="term-line"><span class="t-warn">  ⚑ review</span> plan needs human approval</div>
+                    <div class="term-line"><span class="t-ok">  ✓ approved</span> · applied · PR opened</div>
+                    <div class="term-line"><span class="t-prompt">❯</span> <span class="cursor"></span></div>
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- Technology Section -->
-    <section id="how-we-build">
-        <div class="container">
-            <h2>How We Build</h2>
-            <div class="tech-intro">
-                <p>We go deep rather than wide. Currently building primarily with <span class="highlight">Anthropic's Claude</span> — the leading model for agentic work — while staying close to developments across the broader ecosystem.</p>
-                <p>This is a deliberate choice: Claude's strength in tool use, reliability, and complex reasoning makes it ideal for production AI systems.</p>
+    <main>
+        <section id="focus">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Focus</span>
+                    <h2>Three disciplines, one stack.</h2>
+                    <p>Agents are only as good as the systems underneath them. We work across the whole stack, from the infrastructure up to the agent loop.</p>
+                </div>
+
+                <div class="pillars">
+                    <article class="pillar reveal">
+                        <span class="pillar-num">01</span>
+                        <div class="pillar-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg>
+                        </div>
+                        <h3>Infrastructure</h3>
+                        <p>Cloud platforms that are secure, observable and codified, so they're ready for humans and agents to operate.</p>
+                        <ul>
+                            <li>AWS architecture &amp; landing zones</li>
+                            <li>Infrastructure as code with Terraform</li>
+                            <li>CI/CD, observability &amp; reliability</li>
+                        </ul>
+                    </article>
+
+                    <article class="pillar reveal">
+                        <span class="pillar-num">02</span>
+                        <div class="pillar-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.5"/></svg>
+                        </div>
+                        <h3>Applied AI</h3>
+                        <p>LLMs wired into real products and operations, grounded in your data and measured with proper evaluations.</p>
+                        <ul>
+                            <li>LLM integration &amp; retrieval (RAG)</li>
+                            <li>Evals, guardrails &amp; cost control</li>
+                            <li>AI-assisted operations &amp; support</li>
+                        </ul>
+                    </article>
+
+                    <article class="pillar reveal">
+                        <span class="pillar-num">03</span>
+                        <div class="pillar-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 8.7"/><path d="M20 4v4.7h-4.7"/><path d="M20 12a8 8 0 0 1-13.7 5.6L4 15.3"/><path d="M4 20v-4.7h4.7"/></svg>
+                        </div>
+                        <h3>Agentic Development</h3>
+                        <p>Autonomous agents and AI-native engineering workflows that plan, act and hand back to humans at the right moments.</p>
+                        <ul>
+                            <li>Custom agents &amp; MCP tool servers</li>
+                            <li>Coding agents in your SDLC</li>
+                            <li>Multi-agent orchestration</li>
+                        </ul>
+                    </article>
+                </div>
             </div>
+        </section>
 
-            <div class="tech-categories">
-                <div class="tech-category">
-                    <h4>AI Stack</h4>
-                    <div class="tech-stack">
-                        <div class="tech-badge primary">Claude</div>
-                        <div class="tech-badge primary">Claude SDK</div>
-                        <div class="tech-badge">Python</div>
-                        <div class="tech-badge">LangChain</div>
-                        <div class="tech-badge">Vector DBs</div>
+        <section id="build" class="dark">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <span class="eyebrow">What we build</span>
+                    <h2>From prototype to production.</h2>
+                    <p>Typical engagements, scoped to ship something real in weeks.</p>
+                </div>
+
+                <div class="builds reveal">
+                    <div class="build">
+                        <span class="build-tag">Agentic</span>
+                        <h3>Agents that do real work</h3>
+                        <p>Purpose-built agents connected to your tools and data through MCP, with permissions, audit trails and human-in-the-loop approvals.</p>
                     </div>
-                </div>
-                <div class="tech-category">
-                    <h4>Infrastructure</h4>
-                    <div class="tech-stack">
-                        <div class="tech-badge">AWS</div>
-                        <div class="tech-badge">Kubernetes</div>
-                        <div class="tech-badge">Terraform</div>
-                        <div class="tech-badge">Docker</div>
-                        <div class="tech-badge">Linux</div>
+                    <div class="build">
+                        <span class="build-tag">Engineering</span>
+                        <h3>AI-native dev workflows</h3>
+                        <p>Coding agents set up across your repos and CI: automated reviews, fixes and migrations that raise throughput without lowering the bar.</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Limilo Section -->
-    <section id="why" class="section-alt">
-        <div class="container">
-            <h2>Why Us</h2>
-            <p class="why-statement">Most AI developers can't deploy. Most DevOps engineers don't understand AI.<br>We do both.</p>
-
-            <div class="why-grid">
-                <div class="why-item">
-                    <strong>Production Infrastructure DNA</strong>
-                    <div class="why-item-content">Years of experience building and running production systems, now focused entirely on AI. We don't just build AI — we ship it reliably.</div>
-                </div>
-                <div class="why-item">
-                    <strong>Deep AI Expertise</strong>
-                    <div class="why-item-content">Hands-on experience with agentic systems, LLM applications, and the nuances of making AI work in the real world.</div>
-                </div>
-                <div class="why-item">
-                    <strong>End-to-End Ownership</strong>
-                    <div class="why-item-content">From prototype to production monitoring. No handoffs, no gaps, no "that's someone else's problem."</div>
-                </div>
-                <div class="why-item">
-                    <strong>Practical, Not Theoretical</strong>
-                    <div class="why-item-content">We build systems that work at scale, handle edge cases, and stay up when it matters. No demo-ware.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <p class="section-intro">A selection of what we've built</p>
-
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-placeholder">Project 1</div>
-                    <h3>Coming Soon</h3>
-                    <p>Agentic workflow automation for enterprise operations.</p>
-                    <div class="project-tech">
-                        <span>Claude</span>
-                        <span>AWS</span>
-                        <span>Python</span>
+                    <div class="build">
+                        <span class="build-tag">Platform</span>
+                        <h3>Agent-ready infrastructure</h3>
+                        <p>Sandboxed execution, secrets, network policy and observability, so agents can operate safely against production-grade systems.</p>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-placeholder">Project 2</div>
-                    <h3>Coming Soon</h3>
-                    <p>LLM-powered analysis and reporting system.</p>
-                    <div class="project-tech">
-                        <span>Claude SDK</span>
-                        <span>Kubernetes</span>
+                    <div class="build">
+                        <span class="build-tag">Applied AI</span>
+                        <h3>LLM features with evals</h3>
+                        <p>Retrieval, structured extraction and copilots shipped with evaluation suites, so quality is measured rather than guessed.</p>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-placeholder">Project 3</div>
-                    <h3>Coming Soon</h3>
-                    <p>Production AI infrastructure deployment.</p>
-                    <div class="project-tech">
-                        <span>Terraform</span>
-                        <span>AWS</span>
-                        <span>Docker</span>
+                    <div class="build">
+                        <span class="build-tag">Cloud</span>
+                        <h3>Cloud foundations</h3>
+                        <p>AWS environments built from code: networking, identity, pipelines and cost controls that scale with the business.</p>
+                    </div>
+                    <div class="build">
+                        <span class="build-tag">Reliability</span>
+                        <h3>Production rescue</h3>
+                        <p>Hands-on troubleshooting for critical Linux and cloud systems, plus the automation that stops the same incident from coming back.</p>
                     </div>
                 </div>
             </div>
-            <p class="coming-soon-note">Case studies in development — check back soon.</p>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Ship AI?</h2>
-            <p>Whether you're building your first AI agent or scaling an existing system, we can help you get from prototype to production.</p>
-            <a href="mailto:info@limilo.com" class="cta-button">Start a Conversation</a>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="contact-content">
-                <h2>Get in Touch</h2>
-                <div class="contact-info">
-                    <p>Email: <a href="mailto:info@limilo.com">info@limilo.com</a></p>
+        <section id="stack">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Toolkit</span>
+                    <h2>The stack we work in.</h2>
+                </div>
+                <div class="stack">
+                    <div class="stack-group reveal">
+                        <h3>// infrastructure</h3>
+                        <div class="chips">
+                            <span class="chip">AWS</span>
+                            <span class="chip">Linux</span>
+                            <span class="chip">Terraform</span>
+                            <span class="chip">Docker</span>
+                            <span class="chip">GitHub Actions</span>
+                            <span class="chip">CI/CD</span>
+                            <span class="chip">Observability</span>
+                        </div>
+                    </div>
+                    <div class="stack-group reveal">
+                        <h3>// ai</h3>
+                        <div class="chips">
+                            <span class="chip">Claude</span>
+                            <span class="chip">Frontier LLM APIs</span>
+                            <span class="chip">RAG &amp; embeddings</span>
+                            <span class="chip">Evals</span>
+                            <span class="chip">Python</span>
+                        </div>
+                    </div>
+                    <div class="stack-group reveal">
+                        <h3>// agentic</h3>
+                        <div class="chips">
+                            <span class="chip">Model Context Protocol</span>
+                            <span class="chip">Agent SDKs</span>
+                            <span class="chip">Claude Code</span>
+                            <span class="chip">Tool use</span>
+                            <span class="chip">Multi-agent workflows</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
+        <section id="approach" class="approach-wrap">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Approach</span>
+                    <h2>Small team. Fast loops. Production standards.</h2>
+                </div>
+                <div class="steps">
+                    <div class="step reveal">
+                        <div class="step-num">01</div>
+                        <h3>Find the leverage</h3>
+                        <p>A short discovery to pinpoint where infrastructure or agents will move the needle most.</p>
+                    </div>
+                    <div class="step reveal">
+                        <div class="step-num">02</div>
+                        <h3>Prototype fast</h3>
+                        <p>A working slice in days, not a slide deck, so you can see it and test it against reality.</p>
+                    </div>
+                    <div class="step reveal">
+                        <div class="step-num">03</div>
+                        <h3>Harden it</h3>
+                        <p>Evals, guardrails, observability and infrastructure as code before anything goes live.</p>
+                    </div>
+                    <div class="step reveal">
+                        <div class="step-num">04</div>
+                        <h3>Hand over</h3>
+                        <p>Documented, owned by your team, and built to keep improving after we step back.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="wrap about">
+                <div class="reveal">
+                    <span class="eyebrow">About</span>
+                    <h2>Built by people who've carried the pager.</h2>
+                </div>
+                <div class="about-body reveal">
+                    <p>Limilo is a UK consultancy rooted in <strong>years of running production infrastructure</strong> on AWS and Linux, in environments where reliability isn't optional.</p>
+                    <p>Today we bring that same operational discipline to <strong>AI and agentic systems</strong>. We help teams move past demos to agents and LLM-powered features that are observable, governed and genuinely useful.</p>
+                    <p>We work as an extension of your team, with no handoff theatre: just senior engineers who build, ship and explain.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="wrap contact-inner">
+                <div class="reveal">
+                    <span class="eyebrow">Contact</span>
+                    <h2>Got an agent idea or an infra headache?</h2>
+                    <p>Tell us what you're building. We'll tell you honestly where AI and agents can help, and where they can't.</p>
+                </div>
+                <div class="contact-card reveal">
+                    <div class="contact-label">Email</div>
+                    <a class="contact-email" href="mailto:info@limilo.com">info@limilo.com</a>
+                    <div>
+                        <a href="mailto:info@limilo.com?subject=Hello%20Limilo" class="btn btn-light">Start a conversation <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer>
-        <p>&copy; 2025 Limilo Ltd. All rights reserved.</p>
-        <p>Registered in England and Wales. Company No. 07778174</p>
+        <div class="wrap footer-inner">
+            <span>&copy; <span id="year">2026</span> Limilo Ltd. Registered in England and Wales, Company No. 07778174.</span>
+            <a href="mailto:info@limilo.com">info@limilo.com</a>
+        </div>
     </footer>
+
+    <script>
+        (function () {
+            var yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            var nav = document.getElementById('nav');
+            var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+
+            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // Terminal: reveal lines one after another
+            var lines = document.querySelectorAll('#term .term-line');
+            if (reduce) {
+                lines.forEach(function (l) { l.classList.add('show'); });
+            } else {
+                lines.forEach(function (l, i) {
+                    setTimeout(function () { l.classList.add('show'); }, 400 + i * 520);
+                });
+            }
+
+            // Scroll reveal
+            var items = document.querySelectorAll('.reveal');
+            if (reduce || !('IntersectionObserver' in window)) {
+                items.forEach(function (el) { el.classList.add('in'); });
+                return;
+            }
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            items.forEach(function (el) { io.observe(el); });
+        })();
+    </script>
 </body>
 </html>
